@@ -19,6 +19,10 @@ function setColor(car, color) {
   return color + car + resetColor
 }
 
+function setPosition(car, position) {
+  return car.replace(/(?:\r\n|\r|\n)/g, '\n' + Array(position).join('-'));
+}
+
 function getCarHeight(car) {
   return car.split(/\r\n|\r|\n/).length - 1
 }
@@ -34,18 +38,24 @@ function animateCar(car) {
     '\x1b[37m',
   ]
 
-  let colorIndex = 0
+  let currentPosition = 0
+  const maxPosition = 50
+
   process.stdout.write('\r' + car)
 
   return setInterval(function () {
     process.stdout.moveCursor(0, -getCarHeight(car));
     process.stdout.clearScreenDown()
 
-    const coloredCar = setColor(car, colors[colorIndex++])
-    process.stdout.write(coloredCar)
+    const colorIndex = Math.floor(currentPosition / maxPosition * colors.length)
 
-    colorIndex = colorIndex % colors.length
-  }, 100);
+    const coloredCar = setColor(car, colors[colorIndex])
+    const positionnedColoredCar = setPosition(coloredCar, currentPosition)
+    currentPosition++
+    process.stdout.write(positionnedColoredCar)
+
+    currentPosition = currentPosition % maxPosition
+  }, 20);
 }
 
 console.log('Hello guys,')
