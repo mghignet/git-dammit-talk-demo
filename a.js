@@ -19,5 +19,12 @@ a
 =======
 =======
 a
+<<<<<<< HEAD
 >>>>>>> aa9aa3f... didn't need that
+<<<<<<< HEAD
 >>>>>>> ee416f2... didn't need that
+=======
+=======
+a
+>>>>>>> 18ba208... well maybe we did need that
+>>>>>>> af54dd7... well maybe we did need that
