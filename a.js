@@ -1,6 +1,7 @@
 a
 a
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 a
 a
@@ -28,3 +29,6 @@ a
 a
 >>>>>>> 18ba208... well maybe we did need that
 >>>>>>> af54dd7... well maybe we did need that
+=======
+a
+>>>>>>> a287ca96950ca597e614d5ed104e80e1d21027a2
